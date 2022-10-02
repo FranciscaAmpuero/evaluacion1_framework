@@ -14,9 +14,9 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        //
-        $datos['empleados']
-        return view('empleado.index');
+        //con esto hacemos la consulta a la base de datos para que nos muestre en el index, creamos la variable "empleados"
+        $datos['empleados']=Empleado::paginate(5);
+        return view('empleado.index', $datos);
     }
 
     /**
@@ -91,8 +91,10 @@ class EmpleadoController extends Controller
      * @param  \App\Models\empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(empleado $empleado)
+    public function destroy($id)
     {
         //
+        Empleado::destroy($id);
+        return redirect('empleado');
     }
 }
