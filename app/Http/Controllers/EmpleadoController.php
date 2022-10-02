@@ -93,8 +93,8 @@ class EmpleadoController extends Controller
      */
     public function destroy($id)
     {
-        //
-        Empleado::destroy($id);
+        // con esta funcion se destruye un empleado por su formulario con el id y redireccionamos a la pagina public/empleado
+        empleado::destroy($id);
         return redirect('empleado');
     }
 }

@@ -21,7 +21,7 @@ Mostrar la lista de empleados :)
             <td> Editar |
                 <form action="{{ url('/empleado/'.$empleado->id) }}" method="post">
                     @csrf 
-                    {{ method_fields('DELETE') }}
+                    {{ method_field('DELETE') }}
                     <input type="submit" onclick="return confirm('¿Quieres Borrar?')" value="Borrar">
 
                 </form>
